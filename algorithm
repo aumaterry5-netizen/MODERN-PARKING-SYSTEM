@@ -1,0 +1,22 @@
+Management System
+Initialization:
+Set TOTAL_CAPACITY to maximum parking spaces.
+Set available_slots = TOTAL_CAPACITY.
+Set HOURLY_RATE to standard fixed rate per unit time (e.g., $5/hour).
+Check Slot Availability (Before Entry):
+If available_slots > 0, display "Parking Available: " + available_slots.
+Else, display "Parking Full".
+Vehicle Entry:
+Input license_plate.
+Capture current system time as entry_time.
+Decrement available_slots by 1 (available_slots = available_slots - 1).
+Store record: (license_plate, entry_time, status = "PARKED").
+Vehicle Exit:
+Input license_plate.
+Search record matching license_plate where status == "PARKED".
+Capture current system time as exit_time.
+Calculate duration: \text{duration\_hours} = \lceil (\text{exit\_time} - \text{entry\_time}) \text{ in hours} \rceil.
+Calculate fee: \text{total\_fee} = \text{duration\_hours} \times \text{HOURLY\_RATE}.
+Display duration_hours and total_fee to driver.
+Update record: (exit_time, total_fee, status = "COMPLETED").
+Increment available_slots by 1 (available_slots)
